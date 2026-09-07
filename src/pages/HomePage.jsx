@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../Components/authWrapper/AuthContext';
-
+import explorebutton from '../assets/explorebutton.jpg';
 
 const HomePage = () => {
   const { isLoggedIn, login, logout } = useAuth();
@@ -40,21 +40,27 @@ const HomePage = () => {
       }}>
 
         <Link to="/blog">
-          <button style={{
-            padding: '10px 20px',
-            fontSize: '1rem',
-            backgroundColor: '#ae9cde',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
+          <img 
+            src={explorebutton}
+            alt="Explore Button"
+           style={{
+            width: '200px',
             cursor: 'pointer',
-            transition: 'background-color 0.3s'
+            transitions: 'all 0.3s ease'
           }}
-          onMouseOver={(e) => e.target.style.backgroundColor = '#9a71c6'}
-          onMouseOut={(e) => e.target.style.backgroundColor = '#ae9cde'}
-          >
-            Explore Blog
-          </button>
+          onMouseOver={(e) => {
+            e.currentTarget.style.backgroundColor = '#e2eb38';
+            e.currentTarget.style.boxShadow = '0 0 20px rgba(225, 255, 76, 0.8)';
+            e.currentTarget.style.transform = 'scale(1.08)';
+          }}
+
+          onMouseOut={(e) => {
+            e.currentTarget.style.backgroundColor = '#ae9cde';
+            e.currentTarget.style.boxShadow = 'none';
+            e.currentTarget.style.transform = 'scale(1)';
+          }}
+          />
+            
         </Link>
       </div>
     </div>
