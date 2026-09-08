@@ -7,6 +7,7 @@ import Login from './Components/login/Login';
 import Header from './Components/Common/Header';
 import Footer from './Components/Common/Footer';
 import HomePage from './pages/HomePage';
+import ProjectsPage from './pages/ProjectsPage';
 import { AuthProvider } from './Components/authWrapper/AuthProvider';
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/post/:id" element={<IndividualPostPage />} />
+          <Route path ="/projects" element={<ProjectsPage />} />
         </Routes>
       </AuthProvider>
       <Footer />

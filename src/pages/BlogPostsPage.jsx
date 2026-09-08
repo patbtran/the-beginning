@@ -22,7 +22,7 @@ function BlogPostsPage() {
   return (
     <div>
       <main className="p-6">
-        <h1 className="text-3xl font-bold mb-4">Welcome to our Page!</h1>
+        <h1 className="text-3xl font-bold mb-4">Welcome to my page!</h1>
         <p className="text-lg text-gray-700">This is a post from the author, cheesa !</p>
         <h1 className="text-3xl font-bold mb-4">Blog Posts</h1>
         <ul className="space-y-4">
