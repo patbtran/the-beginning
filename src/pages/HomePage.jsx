@@ -1,71 +1,142 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../Components/authWrapper/AuthContext';
 import explorebutton from '../assets/explorebutton.jpg';
+import aboutmebox1 from '../assets/aboutme1.png';
+import aboutmebox2 from '../assets/aboutme2.png';
 
-const HomePage = () => {
-  const { isLoggedIn, login, logout } = useAuth();
+function HomePage() {
+  const { isLoggedIn } = useAuth();
+
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '100vh',
-      padding: '20px',
-      backgroundColor: '#1a1616',
-      fontFamily: 'Arial, sans-serif',
-      textAlign: 'center'
-    }}>
-      <h1 style={{
-        fontSize: '2.5rem',
-        marginBottom: '20px',
-        color: '#333'
-      }}>
-        Welcome 
+    <div className="bg-[#1a1616] min-h-screen text-white p-8">
+
+      {/* Name / Title */}
+      <h1 className="text-5xl font-bold text-center">
+        Patricia Tran
       </h1>
-      <p style={{
-        fontSize: '1.2rem',
-        marginBottom: '40px',
-        maxWidth: '600px',
-        color: '#666'
-      }}>
-        Curious about me? Start here.
+
+      <p className="text-xl text-center mt-2">
+        Computer Science & Cybersecurity
       </p>
-      <div style={{
-        display: 'flex',
-        gap: '20px',
-        flexWrap: 'wrap',
-        justifyContent: 'center'
-      }}>
 
+
+      {/* Explore Blog Button */}
+      <div className="flex justify-center mt-8">
         <Link to="/blog">
-          <img 
+          <img
             src={explorebutton}
-            alt="Explore Button"
-           style={{
-            width: '200px',
-            cursor: 'pointer',
-            transitions: 'all 0.3s ease'
-          }}
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = '#e2eb38';
-            e.currentTarget.style.boxShadow = '0 0 20px rgba(225, 255, 76, 0.8)';
-            e.currentTarget.style.transform = 'scale(1.08)';
-          }}
-
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = '#ae9cde';
-            e.currentTarget.style.boxShadow = 'none';
-            e.currentTarget.style.transform = 'scale(1)';
-          }}
+            alt="Explore Blog"
+            className="w-[200px] transition duration-300 hover:scale-110 hover:drop-shadow-[0_0_15px_#ae9cde]"
           />
-            
         </Link>
       </div>
+
+
+      {/* ============================= */}
+      {/* ABOUT ME SECTION */}
+      {/* ============================= */}
+
+      <section className="mt-20">
+
+        {/* About Me Title */}
+        <h2 className="text-5xl font-bold italic mb-12">
+          About Me
+        </h2>
+
+
+        {/* BOX #1 - LEFT */}
+        <div className="w-[500px] min-h-[250px] bg-[#211d1e] rounded-2xl p-6 flex items-center gap-6">
+
+          <img
+            src={aboutmebox1}
+            alt="Box1"
+            className="w-[150px] h-[150px] object-cover rounded-2xl"
+          />
+
+          <div>
+            <h3 className="text-2xl font-bold italic mb-3">
+              Hi, I'm Patricia!
+            </h3>
+
+            <p className="text-lg">
+              I'm a Computer Science student interested in
+              cybersecurity, technology, and learning new things. Currently, I have a couple years of IT under my belt and I've passed my COMPTIA Security+ first try!
+            </p>
+          </div>
+
+        </div>
+
+
+        {/* BOX #2 - RIGHT */}
+        <div className="w-[500px] min-h-[250px] bg-[#211d1e] rounded-2xl p-6 flex items-center gap-6 ml-auto mt-10">
+
+          <div>
+            <h3 className="text-2xl font-bold italic mb-3">
+              What I Love
+            </h3>
+
+            <p className="text-lg">
+              Outisde of coding, learning new technologies, and
+              exploring cybersecurity, I love family, friends, and connecting with the outdoors. Beach trips are my favorite meeting point for all of these!
+            </p>
+          </div>
+
+          <img
+            src={aboutmebox2}
+            alt="Box2"
+            className="w-[150px] h-[150px] object-cover rounded-2xl"
+          />
+
+        </div>
+
+
+        {/* BOX #3 - LEFT */}
+        <div className="w-[500px] min-h-[250px] bg-[#211d1e] rounded-2xl p-6 flex items-center gap-6 mt-10">
+
+          <img
+            src="/images/about3.jpg"
+            alt="My goals"
+            className="w-[150px] h-[150px] object-cover rounded-2xl"
+          />
+
+          <div>
+            <h3 className="text-2xl font-bold italic mb-3">
+              My Goals
+            </h3>
+
+            <p className="text-lg">
+              I hope I never lose the drive to continue learning. I want to understand cybesrcurity to a level where I can teach others. 
+            </p>
+          </div>
+
+        </div>
+
+
+        {/* BOX #4 - RIGHT */}
+        <div className="w-[500px] min-h-[250px] bg-[#211d1e] rounded-2xl p-6 flex items-center gap-6 ml-auto mt-10">
+
+          <div>
+            <h3 className="text-2xl font-bold italic mb-3">
+              What Inspires me?
+            </h3>
+
+            <p className="text-lg">
+              Stories belonging to the ones that have surrounded me since the childhood.
+            </p>
+          </div>
+
+          <img
+            src="/images/about4.jpg"
+            alt="Outside of tech"
+            className="w-[150px] h-[150px] object-cover rounded-2xl"
+          />
+
+        </div>
+
+      </section>
+
     </div>
   );
-};
-
+}
 
 export default HomePage;

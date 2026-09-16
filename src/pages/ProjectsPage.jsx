@@ -19,8 +19,8 @@ function ProjectsPage() {
   };
 
   return (
-    <div className="contact-box">
-      <h1>Contact us, we'll reach out!</h1>
+    <div className="project-box">
+      <h1>my collage of projects</h1>
 
       <form onSubmit={handleSubmit}>
         <label>
