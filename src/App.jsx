@@ -9,7 +9,7 @@ import Footer from './Components/Common/Footer';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import { AuthProvider } from './Components/authWrapper/AuthProvider';
-
+import PageTransition from './Components/Common/PageTransition';
 
 function App() {
 
@@ -18,7 +18,8 @@ function App() {
     <div>
       <AuthProvider>
         <Header />
-      <main className="pt-20">
+      <main className="pt-20 bg-[#1a1616] min-h-screen">
+        <PageTransition>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/blog" element={<BlogPostsPage />} />
@@ -27,6 +28,7 @@ function App() {
           <Route path="/post/:id" element={<IndividualPostPage />} />
           <Route path ="/projects" element={<ProjectsPage />} />
         </Routes>
+        </PageTransition>
       </main>
       </AuthProvider>
       <Footer />

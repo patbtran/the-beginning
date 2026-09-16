@@ -1,0 +1,13 @@
+.page-transition {
+  animation: slideDown 0.7s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
