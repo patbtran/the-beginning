@@ -12,11 +12,11 @@ function HomePage() {
 
       {/* Name / Title */}
       <h1 className="text-5xl font-bold text-center">
-        Patricia Tran
+        cheesa
       </h1>
 
       <p className="text-xl text-center mt-2">
-        Computer Science & Cybersecurity
+        curious about me? start here
       </p>
 
 
@@ -36,11 +36,11 @@ function HomePage() {
       {/* ABOUT ME SECTION */}
       {/* ============================= */}
 
-      <section className="mt-20">
+      <section className="mt-75">
 
         {/* About Me Title */}
         <h2 className="text-5xl font-bold italic mb-12">
-          About Me
+          README
         </h2>
 
 
