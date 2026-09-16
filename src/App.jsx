@@ -18,6 +18,7 @@ function App() {
     <div>
       <AuthProvider>
         <Header />
+      <main className="pt-20">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/blog" element={<BlogPostsPage />} />
@@ -26,6 +27,7 @@ function App() {
           <Route path="/post/:id" element={<IndividualPostPage />} />
           <Route path ="/projects" element={<ProjectsPage />} />
         </Routes>
+      </main>
       </AuthProvider>
       <Footer />
     </div>
