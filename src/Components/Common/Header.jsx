@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useUsername, useAuth } from "../authWrapper/AuthContext";
 
 
-function Header() {
+function Header({ setContactOpen }) {
     const username = useUsername();
     const { logout } = useAuth();
 
@@ -31,9 +31,6 @@ function Header() {
                                 <Link to="/projects">projects</Link>
                             </li>
 
-                            <li>
-                                <Link to="/contact">contact</Link>
-                            </li>
 
                             <li>
                                 {username ? (
@@ -45,6 +42,13 @@ function Header() {
 
                         </ul>
                     </nav>
+                    {/* Contact Button */}
+                    <button
+                        onClick={() => setContactOpen(true)}
+                        className="absolute right-8 top-4"
+                    >
+                        contact
+                    </button>
 
                 </div>
 

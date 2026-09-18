@@ -19,7 +19,7 @@ function ContactPage() {
   };
 
   return (
-    <div className="contact-box">
+    <div className="h-screen bg-[#211d1e] text-white p-8">
       <h1>Contact us, we'll reach out!</h1>
 
       <form onSubmit={handleSubmit}>
