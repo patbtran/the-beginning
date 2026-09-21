@@ -14,7 +14,16 @@ import { useState } from 'react';
 
 function App() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [contactClosing, setContactClosing] = useState(false);
 
+  const closeContact = () => {
+  setContactClosing(true);
+
+  setTimeout(() => {
+    setContactOpen(false);
+    setContactClosing(false);
+  }, 1200);
+};
 
   return (
     <div>
@@ -32,10 +41,20 @@ function App() {
         </Routes>
         </PageTransition>
         {contactOpen && (
-        <div className="fixed top-0 right-0 w-1/3 h-screen z-50">
-      <ContactPage />
-        </div>
-)}
+          <div
+            className="fixed inset-0 z-50 bg-black/20"
+            onClick={closeContact}
+          >
+            <div
+              className={`absolute top-0 right-0 w-1/3 h-screen ${
+                contactClosing ? 'contact-slide-out' : 'contact-slide-in'
+              }`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ContactPage onClose={closeContact} />
+            </div>
+          </div>
+        )}
       </main>
       </AuthProvider>
       <Footer />

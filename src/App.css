@@ -2,6 +2,34 @@
   animation: slideDown 0.7s ease-in-out;
 }
 
+.contact-slide-in {
+  animation: contactSlideIn 1.2s ease forwards;
+}
+
+@keyframes contactSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.contact-slide-out {
+  animation: contactSlideOut 1.2s ease forwards;
+}
+
+@keyframes contactSlideOut {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
 @keyframes slideDown {
   from {
     transform: translateY(-100%);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ContactPage() {
+function ContactPage({ onClose }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,7 +20,13 @@ function ContactPage() {
 
   return (
     <div className="h-screen bg-[#211d1e] text-white p-8">
-      <h1>Contact us, we'll reach out!</h1>
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 text-2xl"
+      >
+        ×
+      </button>
+      <h1>Contact me, I'd love to talk!</h1>
 
       <form onSubmit={handleSubmit}>
         <label>
