@@ -38,7 +38,7 @@ function HomePage() {
       {/* ABOUT ME SECTION */}
       {/* ============================= */}
 
-      <section className="mt-75">
+      <section className="mt-75 px-13">
 
         {/* About Me Title */}
         <h2 className="text-5xl font-bold italic mb-12">
@@ -51,7 +51,7 @@ function HomePage() {
           <img
             src={aboutmebox1}
             alt="Box1"
-            className="w-[150px] h-[150px] object-cover rounded-2xl"
+            className="w-[300px] h-[300px] object-contain rounded-2xl "
           />
 
           <div>
@@ -85,7 +85,7 @@ function HomePage() {
           <img
             src={aboutmebox2}
             alt="Box2"
-            className="w-[150px] h-[150px] object-cover rounded-2xl"
+            className="w-[300px] h-[300px] object-contain rounded-2xl"
           />
 
         </div>
@@ -97,7 +97,7 @@ function HomePage() {
           <img
             src={aboutmebox3}
             alt="Box3"
-            className="w-[150px] h-[150px] object-cover rounded-2xl"
+            className="w-[300px] h-[300px] object-contain rounded-2xl"
           />
 
           <div>
@@ -132,7 +132,7 @@ function HomePage() {
           <img
             src={aboutmebox4}
             alt="Box4"
-            className="w-[150px] h-[150px] object-cover rounded-2xl"
+            className="w-[300px] h-[300px] object-contain rounded-2xl"
           />
 
         </div>

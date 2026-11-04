@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import contactcard from '../assets/contactcard.jpg';
 
 function ContactPage({ onClose }) {
   const [formData, setFormData] = useState({
@@ -19,16 +20,47 @@ function ContactPage({ onClose }) {
   };
 
   return (
-    <div className="h-screen bg-[#211d1e] text-white p-8">
-      <button
+    <div className="h-screen bg-[#211d1e] text-white p-4 overflow-y-auto">
+
+      <button // x button
+        type="button"
         onClick={onClose}
-        className="absolute top-4 right-4 text-2xl"
+        className="absolute top-4 right-4 text-2xl z-10"
       >
         ×
       </button>
+
       <h1>Contact me, I'd love to talk!</h1>
 
       <form onSubmit={handleSubmit}>
+
+        <div className="relaitve w-full"> 
+
+          <img
+          src={contactcard}
+          alt="Contact Card"
+          className="w-full h-auto block"
+          />
+
+          <textarea
+            name="message"
+            placeholder="Your message"
+            aria-label="Your message"
+            value={formData.message}
+            onChange={handleChange}
+            className="absolute top-[32%] left-[7%] w-[40%] h-[52%] bg-transparent text-[#444] text-[10px] leading-relaxed resize-none outline-none"
+          />
+
+          <input
+          type="email"
+          name="email"
+          placeholder="Your email"
+          aria-label="Your email"
+          value={formData.email}
+          onChange={handleChange}
+          className="absolute top-[61%] left-[65%] w-[27%] bg-transparent text-[#444] text-[10px] outline-none"
+          />
+        </div>
         <label>
           Name:
           <input
