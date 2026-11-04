@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../Components/authWrapper/AuthContext';
 import explorebutton from '../assets/explorebutton.jpg';
 import aboutmebox1 from '../assets/aboutme1.png';
-import aboutmebox2 from '../assets/aboutme2.png';
+import aboutmebox4 from '../assets/aboutme2.png';
+import aboutmebox3 from '../assets/aboutme3.jpeg';
+import aboutmebox2 from '../assets/aboutme4.jpg';
 
 function HomePage() {
   const { isLoggedIn } = useAuth();
@@ -45,8 +47,7 @@ function HomePage() {
 
 
         {/* BOX #1 - LEFT */}
-        <div className="w-[500px] min-h-[250px] bg-[#211d1e] rounded-2xl p-6 flex items-center gap-6">
-
+        <div className="w-[700px] min-h-[350px] bg-[#211d1e] rounded-2xl p-8 flex items-center gap-8 transition duration-300 hover:scale-105">
           <img
             src={aboutmebox1}
             alt="Box1"
@@ -68,16 +69,16 @@ function HomePage() {
 
 
         {/* BOX #2 - RIGHT */}
-        <div className="w-[500px] min-h-[250px] bg-[#211d1e] rounded-2xl p-6 flex items-center gap-6 ml-auto mt-10">
-
+      <div className="w-[700px] min-h-[350px] bg-[#211d1e] rounded-2xl p-8 flex items-center gap-8 ml-auto mt-16 transition duration-300 hover:scale-105">
           <div>
             <h3 className="text-2xl font-bold italic mb-3">
-              What I Love
+              Goals & Inspirations
             </h3>
 
             <p className="text-lg">
-              Outisde of coding, learning new technologies, and
-              exploring cybersecurity, I love family, friends, and connecting with the outdoors. Beach trips are my favorite meeting point for all of these!
+              Getting comfortable with being uncomfortable. I like to believe that being uncomfortable with doing something is just a sign of something you have to learn.
+              I take a lot from my family, through them they have shown me, you can always figure a way. 
+              
             </p>
           </div>
 
@@ -91,21 +92,23 @@ function HomePage() {
 
 
         {/* BOX #3 - LEFT */}
-        <div className="w-[500px] min-h-[250px] bg-[#211d1e] rounded-2xl p-6 flex items-center gap-6 mt-10">
+        <div className="w-[700px] min-h-[350px] bg-[#211d1e] rounded-2xl p-8 flex items-center gap-8 mt-16 transition duration-300 hover:scale-105">
 
           <img
-            src="/images/about3.jpg"
-            alt="My goals"
+            src={aboutmebox3}
+            alt="Box3"
             className="w-[150px] h-[150px] object-cover rounded-2xl"
           />
 
           <div>
             <h3 className="text-2xl font-bold italic mb-3">
-              My Goals
+               Hobbies
             </h3>
 
             <p className="text-lg">
-              I hope I never lose the drive to continue learning. I want to understand cybesrcurity to a level where I can teach others. 
+              As of recently, I have enjoyed learning about modding. The world of PCB's and working on physical hardware have been kept me entertained. 
+              I have found that not only is it fun, but it has allowed to me to provide entertainment for my friends and family!
+              
             </p>
           </div>
 
@@ -113,21 +116,22 @@ function HomePage() {
 
 
         {/* BOX #4 - RIGHT */}
-        <div className="w-[500px] min-h-[250px] bg-[#211d1e] rounded-2xl p-6 flex items-center gap-6 ml-auto mt-10">
+        <div className="w-[700px] min-h-[350px] bg-[#211d1e] rounded-2xl p-8 flex items-center gap-8 ml-auto mt-16 transition duration-300 hover:scale-105">
 
           <div>
             <h3 className="text-2xl font-bold italic mb-3">
-              What Inspires me?
+              Outside of Tech
             </h3>
 
             <p className="text-lg">
-              Stories belonging to the ones that have surrounded me since the childhood.
+              Outside of coding, learning new technologies, and
+              exploring cybersecurity, I love being with family, friends, and connecting with the outdoors. Beach trips are my favorite meeting point for all of these!
             </p>
           </div>
 
           <img
-            src="/images/about4.jpg"
-            alt="Outside of tech"
+            src={aboutmebox4}
+            alt="Box4"
             className="w-[150px] h-[150px] object-cover rounded-2xl"
           />
 
