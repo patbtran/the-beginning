@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import contactcard from '../assets/contactpage1.jpeg';
+import DrawingCanvas from "../Components/drawing/DrawingCanvas";
 
 function ContactPage({ onClose }) {
   const [formData, setFormData] = useState({
@@ -71,6 +72,14 @@ function ContactPage({ onClose }) {
           maxLength={59}
           className="absolute top-[64%] left-[54%] w-[38%] h-[15%] bg-transparent text-[#555] text-[20px] leading-[2.2cqw] resize-none outline-none overflow-y-auto"
           />
+
+          <p className="absolute top-[21%] left-[49%] w-[38%] text-center text-[#555] text-[16px] font-medium">
+            add a drawing :D
+            </p>
+          {/* Drawing area */}
+          <div className="absolute top-[25%] left-[55%] w-[38%] h-[34%]">
+            <DrawingCanvas />
+          </div>
 
         </div>
         
