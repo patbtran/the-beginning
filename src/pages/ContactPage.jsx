@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import contactcard from '../assets/contactpage.jpeg';
+import contactcard from '../assets/contactpage1.jpeg';
 
 function ContactPage({ onClose }) {
   const [formData, setFormData] = useState({
@@ -48,28 +48,30 @@ function ContactPage({ onClose }) {
             aria-label="Your message"
             value={formData.message}
             onChange={handleChange}
-            className="absolute top-[20%] left-[7%] w-[40%] h-[69%] bg-transparent text-[#555] text-[12px] leading-[1.7] resize-none outline-none"
+            maxLength={280}
+            className="absolute top-[20%] left-[7%] w-[40%] h-[74%] bg-transparent text-[#555] text-[20px] leading-[1.4] resize-none outline-none"
           />
 
-          <input
-          type="email"
+          <textarea
           name="email"
           placeholder="Your email"
           aria-label="Your email"
           value={formData.email}
           onChange={handleChange}
-          className="absolute top-[90%] left-[55%] w-[27%] bg-transparent text-[#555] text-[12px] outline-none"
+          maxLength={53}
+          className="absolute top-[84.5%] left-[54%] w-[38%] bg-transparent text-[#555] text-[13px] leading-[2cqw] resize-none outline-none overflow-y-auto"
           />
 
-          <input
-          type="text"
+          <textarea
           name="subject"
           placeholder="Subject line"
           aria-label="Subject"
           value={formData.subject}
           onChange={handleChange}
-          className="absolute top-[80%] left-[54%] w-[28%] bg-transparent text-[#555] text-[12px] outline-none"
+          maxLength={59}
+          className="absolute top-[64%] left-[54%] w-[38%] h-[15%] bg-transparent text-[#555] text-[20px] leading-[2.2cqw] resize-none outline-none overflow-y-auto"
           />
+
         </div>
         
         <div className="flex justify-center mt-6 mb-8">
