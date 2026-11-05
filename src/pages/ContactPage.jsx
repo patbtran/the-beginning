@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import contactcard from '../assets/contactcard.jpg';
+import contactcard from '../assets/contactpage.jpeg';
 
 function ContactPage({ onClose }) {
   const [formData, setFormData] = useState({
-    name: "",
+    subject: "",
     email: "",
     message: ""
   });
@@ -20,7 +20,7 @@ function ContactPage({ onClose }) {
   };
 
   return (
-    <div className="h-screen bg-[#211d1e] text-white p-4 overflow-y-auto">
+    <div className="h-screen bg-[#fcf9f0] text-[#555] overflow-y-auto relative">
 
       <button // x button
         type="button"
@@ -30,11 +30,11 @@ function ContactPage({ onClose }) {
         ×
       </button>
 
-      <h1>Contact me, I'd love to talk!</h1>
+      <h1 className="text-3xl font-bold text-center mt-8">Contact me, I'd love to talk!</h1>
 
       <form onSubmit={handleSubmit}>
 
-        <div className="relaitve w-full"> 
+        <div className="relative w-full"> 
 
           <img
           src={contactcard}
@@ -48,7 +48,7 @@ function ContactPage({ onClose }) {
             aria-label="Your message"
             value={formData.message}
             onChange={handleChange}
-            className="absolute top-[32%] left-[7%] w-[40%] h-[52%] bg-transparent text-[#444] text-[10px] leading-relaxed resize-none outline-none"
+            className="absolute top-[20%] left-[7%] w-[40%] h-[69%] bg-transparent text-[#555] text-[12px] leading-[1.7] resize-none outline-none"
           />
 
           <input
@@ -58,49 +58,27 @@ function ContactPage({ onClose }) {
           aria-label="Your email"
           value={formData.email}
           onChange={handleChange}
-          className="absolute top-[61%] left-[65%] w-[27%] bg-transparent text-[#444] text-[10px] outline-none"
+          className="absolute top-[90%] left-[55%] w-[27%] bg-transparent text-[#555] text-[12px] outline-none"
+          />
+
+          <input
+          type="text"
+          name="subject"
+          placeholder="Subject line"
+          aria-label="Subject"
+          value={formData.subject}
+          onChange={handleChange}
+          className="absolute top-[80%] left-[54%] w-[28%] bg-transparent text-[#555] text-[12px] outline-none"
           />
         </div>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="name"
-            placeholder="Your name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-        </label>
-
-        <br />
-
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </label>
-
-        <br />
-
-        <label>
-          Message:
-          <textarea
-            name="message"
-            placeholder="Your message"
-            rows={5}
-            value={formData.message}
-            onChange={handleChange}
-          />
-        </label>
-
-        <br />
-
-        <button type="submit">Submit</button>
+        
+        <div className="flex justify-center mt-6 mb-8">
+        <button type="submit"
+        className="bg-[#a9cdea] text-[#333] font-bold px-8 py-3 rounded-lg hover:scale-105 transition duration-300 cursor pointer hover:bg-[#8bbbe0] hover:shadow-lg"
+        >
+          Submit
+        </button>
+        </div>
       </form>
     </div>
   );
