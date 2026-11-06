@@ -1,0 +1,19 @@
+name: Generate GitHub Snake
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate contribution snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: patbnguyen
+          outputs: |
+            dist/github-snake.svg?palette=github-dark
