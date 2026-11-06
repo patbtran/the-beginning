@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { useAuth } from '../Components/authWrapper/AuthContext';
 import explorebutton from '../assets/explorebutton.jpg';
 import aboutmebox1 from '../assets/aboutme1.png';
 import aboutmebox4 from '../assets/aboutme2.png';
@@ -7,7 +6,6 @@ import aboutmebox3 from '../assets/aboutme3.jpeg';
 import aboutmebox2 from '../assets/aboutme4.jpg';
 
 function HomePage() {
-  const { isLoggedIn } = useAuth();
 
   return (
     <div className="bg-[#1a1616] min-h-screen text-white p-8">

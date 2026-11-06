@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import Comments from './Comments';
 import Content from './Content';
 
 function BlogPost({ post, user }) {

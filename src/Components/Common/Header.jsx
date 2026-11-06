@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import { useUsername, useAuth } from "../authWrapper/AuthContext";
 
 
 function Header({ setContactOpen }) {
-    const username = useUsername();
-    const { logout } = useAuth();
+
 
     return (
         <div className="fixed top-0 left-0 w-full z-50">
@@ -31,14 +29,6 @@ function Header({ setContactOpen }) {
                                 <Link to="/projects">projects</Link>
                             </li>
 
-
-                            <li>
-                                {username ? (
-                                    <p onClick={logout}>logout</p>
-                                ) : (
-                                    <Link to="/login">login</Link>
-                                )}
-                            </li>
 
                         </ul>
                     </nav>

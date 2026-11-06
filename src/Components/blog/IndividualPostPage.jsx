@@ -1,6 +1,5 @@
 import React from 'react';
 import Content from './Content';
-import Comments from './Comments';
 
 function IndividualPostPage({ post }) {
 	if (!post) return <div className="p-4">Post not found.</div>;

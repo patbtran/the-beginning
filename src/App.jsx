@@ -3,12 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import BlogPostsPage from './pages/BlogPostsPage';
 import IndividualPostPage from './pages/IndividualPostPage';
 import ContactPage from './pages/ContactPage';
-import Login from './Components/login/Login';
 import Header from './Components/Common/Header';
 import Footer from './Components/Common/Footer';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
-import { AuthProvider } from './Components/authWrapper/AuthProvider';
 import PageTransition from './Components/Common/PageTransition';
 import { useState } from 'react';
 
@@ -27,7 +25,6 @@ function App() {
 
   return (
     <div>
-      <AuthProvider>
         <Header setContactOpen={setContactOpen} />
       <main className="pt-20 bg-[#1a1616] min-h-screen">
         <PageTransition>
@@ -35,7 +32,6 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/blog" element={<BlogPostsPage />} />
           
-          <Route path="/login" element={<Login />} />
           <Route path="/post/:id" element={<IndividualPostPage />} />
           <Route path ="/projects" element={<ProjectsPage />} />
         </Routes>
@@ -56,7 +52,6 @@ function App() {
           </div>
         )}
       </main>
-      </AuthProvider>
       <Footer />
     </div>
   );
