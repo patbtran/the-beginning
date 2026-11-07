@@ -40,19 +40,33 @@ function ProjectsPage() {
       </div>
 
 
-      <h1>the collage of projects</h1>
+      
+<h1 className="text-3xl md:text-6xl font-bold italic text-white text-center mt-40 mb-24">
+  my collage of projects
+</h1>
+
 
 
 <div className="relative max-w-[720px] mx-auto my-12 px-4">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-start">
+  
+<motion.div 
+  className="grid grid-cols-1 md:grid-cols-2 gap-0 items-start"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.5 }}
+>
+
 
   {/* Project 1 */}
-  <motion.div
-  initial={{ opacity: 0, x: -180 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true, amount: 0.2 }}
+  
+<motion.div
+  variants={{
+    hidden: { opacity: 0, x: -180 },
+    visible: { opacity: 1, x: 0 }
+  }}
   transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
 >
+
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 
 
@@ -93,14 +107,15 @@ function ProjectsPage() {
   </motion.div>
 
   {/* Project 2 */}
-
 <motion.div
-  initial={{ opacity: 0, x: 180 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true, amount: 0.2 }}
+  variants={{
+    hidden: { opacity: 0, x: 180 },
+    visible: { opacity: 1, x: 0 }
+  }}
   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
   className="relative md:mt-28"
 >
+
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 
     <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
@@ -128,15 +143,15 @@ function ProjectsPage() {
   </motion.div>
 
   {/* Project 3 */}
-
-
 <motion.div
-  initial={{ opacity: 0, y: 180 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, amount: 0.2 }}
+  variants={{
+    hidden: { opacity: 0, y: 180 },
+    visible: { opacity: 1, y: 0 }
+  }}
   transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-  className="relative md:-mt-24"
+  className="relative md:-mt-28"
 >
+
 
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 
@@ -165,15 +180,15 @@ function ProjectsPage() {
   </motion.div>
 
     {/* Project 4 */}
-
-
 <motion.div
-  initial={{ opacity: 0, y: 180 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, amount: 0.2 }}
+  variants={{
+    hidden: { opacity: 0, y: 180 },
+    visible: { opacity: 1, y: 0 }
+  }}
   transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
   className="relative md:mt-8"
 >
+
 
 
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
@@ -209,11 +224,11 @@ function ProjectsPage() {
     </a>
 
   </div>
-  </motion.div>
-</div>
+</motion.div>
+</motion.div>
 
 </div>
-    </div>
+</div>
   );
 }
 
