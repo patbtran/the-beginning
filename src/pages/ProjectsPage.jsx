@@ -20,12 +20,7 @@ function ProjectsPage() {
   };
 
   return (
-
-
-
     <div className="project-box">
-
-  
 
     <div className="w-full flex flex-col items-center my-10 px-6 py-8 rounded-2xl bg-[#494341]">
         <h2 className="text-2xl font-semibold text-white mb-6">
@@ -50,7 +45,7 @@ function ProjectsPage() {
 <div className="relative max-w-[720px] mx-auto my-12 px-4">
   
 <motion.div 
-  className="grid grid-cols-1 md:grid-cols-2 gap-0 items-start"
+  className="grid grid-cols-1 md:grid-cols-2 gap-y-0 md:gap-x-2 items-start"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
@@ -69,13 +64,11 @@ function ProjectsPage() {
 
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 
-
-
     <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
       <span className="text-gray-300">Project Image</span>
     </div>
 
-    <h2 className="text-xl font-bold text-white mb-3">
+    <h2 className="text-xl font-bold text-white mb-2">
       Connect Four
     </h2>
 
@@ -113,7 +106,7 @@ function ProjectsPage() {
     visible: { opacity: 1, x: 0 }
   }}
   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-  className="relative md:mt-28"
+  className="relative md:mt-32"
 >
 
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
@@ -149,7 +142,7 @@ function ProjectsPage() {
     visible: { opacity: 1, y: 0 }
   }}
   transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-  className="relative md:-mt-28"
+  className="relative md:-mt-30"
 >
 
 
@@ -186,10 +179,8 @@ function ProjectsPage() {
     visible: { opacity: 1, y: 0 }
   }}
   transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-  className="relative md:mt-8"
+  className="relative md:mt-2"
 >
-
-
 
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
     <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
