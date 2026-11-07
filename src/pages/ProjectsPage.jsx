@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "motion/react"; 
 
 function ProjectsPage() {
   const [formData, setFormData] = useState({
@@ -24,7 +25,8 @@ function ProjectsPage() {
 
     <div className="project-box">
 
-      
+  
+
     <div className="w-full flex flex-col items-center my-10 px-6 py-8 rounded-2xl bg-[#494341]">
         <h2 className="text-2xl font-semibold text-white mb-6">
           My Live GitHub Contributions
@@ -40,12 +42,21 @@ function ProjectsPage() {
 
       <h1>the collage of projects</h1>
 
-      
-      
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-6 my-10">
+
+<div className="relative max-w-[720px] mx-auto my-12 px-4">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-start">
 
   {/* Project 1 */}
+  <motion.div
+  initial={{ opacity: 0, x: -180 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
+>
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+
+
+
     <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
       <span className="text-gray-300">Project Image</span>
     </div>
@@ -67,10 +78,31 @@ function ProjectsPage() {
     >
       View on GitHub
     </a>
+    <br>
+    </br>
+    <a
+      href="https://lnkd.in/p/e8CH6EK2"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[#c4b5f5] hover:underline"
+    >
+      View on Linkedin
+    </a>
+
   </div>
+  </motion.div>
 
   {/* Project 2 */}
+
+<motion.div
+  initial={{ opacity: 0, x: 180 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+  className="relative md:mt-28"
+>
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+
     <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
       <span className="text-gray-300">Project Image</span>
     </div>
@@ -90,12 +122,24 @@ function ProjectsPage() {
       rel="noopener noreferrer"
       className="text-[#c4b5f5] hover:underline"
     >
-      View on LinkedIn
+      View on Linkedin
     </a>
   </div>
+  </motion.div>
 
   {/* Project 3 */}
+
+
+<motion.div
+  initial={{ opacity: 0, y: 180 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+  className="relative md:-mt-24"
+>
+
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+
     <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
       <span className="text-gray-300">Project Image</span>
     </div>
@@ -118,8 +162,20 @@ function ProjectsPage() {
       View on Linkedin
     </a>
   </div>
+  </motion.div>
 
     {/* Project 4 */}
+
+
+<motion.div
+  initial={{ opacity: 0, y: 180 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+  className="relative md:mt-8"
+>
+
+
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
     <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
       <span className="text-gray-300">Project Image</span>
@@ -153,6 +209,8 @@ function ProjectsPage() {
     </a>
 
   </div>
+  </motion.div>
+</div>
 
 </div>
     </div>
