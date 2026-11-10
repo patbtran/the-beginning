@@ -27,11 +27,20 @@ const handleSubmit = async (e) => {
   // Retrieve the completed drawing as a PNG
   const drawingBlob = await drawingRef.current.getDrawingBlob();
 
-  // Temporarily display the submission in the console
-  console.log("Subject:", formData.subject);
-  console.log("Email:", formData.email);
-  console.log("Message:", formData.message);
-  console.log("Drawing:", drawingBlob);
+  
+  // Prepare the postcard data for the backend
+  const postcardData = new FormData();
+
+  postcardData.append("subject", formData.subject);
+  postcardData.append("email", formData.email);
+  postcardData.append("message", formData.message);
+  postcardData.append("drawing", drawingBlob, "drawing.png");
+
+  // Temporarily verify the prepared data
+  for (const [key, value] of postcardData.entries()) {
+    console.log(key, value);
+  }
+
 };
 
 
