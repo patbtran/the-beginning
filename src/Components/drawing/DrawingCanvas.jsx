@@ -1,10 +1,29 @@
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, forwardRef, useImperativeHandle } from "react";
+/*useRef, allows referncing and storing data
+useState, allows updating information
+forwardref, allows contactpage.jsx to access the drawings from drawingcanvas.jsx
+useImperativeHandle, allows control of exactly what functionality the parent component can access
+*/
 
-function DrawingCanvas() {
+
+const DrawingCanvas = forwardRef(function DrawingCanvas(props, ref) {
   const canvasRef = useRef(null);
   const isDrawing = useRef(false);
   const [penColor, setPenColor] = useState("#555555");
+
+
+  // Allows ContactPage to retrieve the drawing as a PNG
+  useImperativeHandle(ref, () => ({
+    getDrawingBlob: () => {
+      return new Promise((resolve) => {
+        canvasRef.current.toBlob((blob) => {
+          resolve(blob);
+        }, "image/png");
+      });
+    }
+  }));
+
 
   const getPosition = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -80,6 +99,6 @@ function DrawingCanvas() {
       </button>
     </>
   );
-}
+});
 
 export default DrawingCanvas;

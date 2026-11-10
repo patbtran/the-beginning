@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import contactcard from '../assets/contactpage1.jpeg';
 import DrawingCanvas from "../Components/drawing/DrawingCanvas";
 
 function ContactPage({ onClose }) {
+
+  // Reference to the drawing canvas component
+  const drawingRef = useRef(null);
+
   const [formData, setFormData] = useState({
     subject: "",
     email: "",
@@ -16,9 +20,20 @@ function ContactPage({ onClose }) {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // prevents page refresh
-  };
+  
+const handleSubmit = async (e) => {
+  e.preventDefault(); // Prevents page refresh
+
+  // Retrieve the completed drawing as a PNG
+  const drawingBlob = await drawingRef.current.getDrawingBlob();
+
+  // Temporarily display the submission in the console
+  console.log("Subject:", formData.subject);
+  console.log("Email:", formData.email);
+  console.log("Message:", formData.message);
+  console.log("Drawing:", drawingBlob);
+};
+
 
   return (
     <div className="h-screen bg-[#fcf9f0] text-[#555] overflow-y-auto relative">
@@ -74,11 +89,11 @@ function ContactPage({ onClose }) {
           />
 
           <p className="absolute top-[21%] left-[49%] w-[38%] text-center text-[#555] text-[16px] font-medium">
-            add a drawing :D
+            leave a drawing :D
             </p>
           {/* Drawing area */}
           <div className="absolute top-[25%] left-[55%] w-[38%] h-[34%]">
-            <DrawingCanvas />
+            <DrawingCanvas ref={drawingRef}/>
           </div>
 
         </div>

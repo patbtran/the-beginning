@@ -59,7 +59,7 @@ function HomePage() {
 
             <p className="text-lg">
               I'm a Computer Science student interested in
-              cybersecurity, technology, and learning new things. Currently, I have a couple years of IT under my belt and I've passed my COMPTIA Security+ first try!
+              cybersecurity, technology, and learning new things. Currently, I have a year of IT under my belt and I've passed my COMPTIA Security+ first try!
             </p>
           </div>
 
@@ -104,8 +104,8 @@ function HomePage() {
             </h3>
 
             <p className="text-lg">
-              As of recently, I have enjoyed learning about modding. The world of PCB's and working on physical hardware have been kept me entertained. 
-              I have found that not only is it fun, but it has allowed to me to provide entertainment for my friends and family!
+              As of recently, I enjoy learning about modding. The world of PCB's and working on physical hardware have been so entertaining! 
+              I have found that not only is it fun, but it has allowed to me to offer more convenient methods for my friends and family!
               
             </p>
           </div>
