@@ -31,6 +31,44 @@ app.post("/api/postcards", upload.single("drawing"), (req, res) => {
   // Retrieve the uploaded drawing
   const drawing = req.file;
 
+
+  // Validate required fields and data types
+  if (
+    typeof subject !== "string" ||
+    typeof email !== "string" ||
+    typeof message !== "string" ||
+    !subject.trim() ||
+    !email.trim() ||
+    !message.trim()
+  ) {
+    return res.status(400).json({
+      message: "Subject, email, and message must contain valid text."
+    });
+  }
+
+  // Enforce character limits
+  if (
+    subject.length > 59 ||
+    email.length > 53 ||
+    message.length > 280
+  ) {
+    return res.status(400).json({
+      message: "One or more fields exceed the character limit."
+    });
+  }
+
+  // character limits
+  if (
+    subject.length > 59 ||
+    email.length > 53 ||
+    message.length > 280
+  ) {
+    return res.status(400).json({
+      message: "One or more fields exceed the character limit."
+    });
+  }
+
+
   // Temporarily log the received data
   console.log("Subject:", subject);
   console.log("Email:", email);
