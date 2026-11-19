@@ -46,7 +46,7 @@ app.post("/api/postcards", upload.single("drawing"), (req, res) => {
     });
   }
 
-  // Enforce character limits
+  // character limits
   if (
     subject.length > 59 ||
     email.length > 53 ||
@@ -57,14 +57,35 @@ app.post("/api/postcards", upload.single("drawing"), (req, res) => {
     });
   }
 
-  // character limits
+
+  // Validate email address format
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailPattern.test(email)) {
+    return res.status(400).json({
+      message: "Please enter a valid email address."
+    });
+  }
+
+  // Check that a drawing file was uploaded
+  if (!drawing) {
+    return res.status(400).json({
+      message: "A drawing file is required."
+    });
+  }
+
+  // Check the uploaded file's PNG signature
+  const pngSignature = Buffer.from([
+    137, 80, 78, 71, 13, 10, 26, 10
+  ]);
+
   if (
-    subject.length > 59 ||
-    email.length > 53 ||
-    message.length > 280
+    drawing.mimetype !== "image/png" ||
+    drawing.buffer.length < 8 ||
+    !drawing.buffer.subarray(0, 8).equals(pngSignature)
   ) {
     return res.status(400).json({
-      message: "One or more fields exceed the character limit."
+      message: "The drawing must be a PNG image."
     });
   }
 
