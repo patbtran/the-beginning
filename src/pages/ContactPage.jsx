@@ -36,10 +36,25 @@ const handleSubmit = async (e) => {
   postcardData.append("message", formData.message);
   postcardData.append("drawing", drawingBlob, "drawing.png");
 
-  // Temporarily verify the prepared data
-  for (const [key, value] of postcardData.entries()) {
-    console.log(key, value);
+
+  // Send the postcard to Express backend
+  try {
+    const response = await fetch("/api/postcards", {
+      method: "POST",
+      body: postcardData
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.message || "Failed to submit postcard");
+    }
+
+    console.log("Server response:", result);
+  } catch (error) {
+    console.error("Error submitting postcard:", error);
   }
+
 
 };
 
