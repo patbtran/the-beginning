@@ -1,6 +1,6 @@
 const express = require("express");
 const multer = require("multer");
-
+const sharp = require("sharp");
 
 // Create an Express application
 const app = express();
@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 
 
  // Endpoint for receiving postcard submissions
-app.post("/api/postcards", upload.single("drawing"), (req, res) => {
+app.post("/api/postcards", upload.single("drawing"), async (req, res) => {
   // Retrieve the postcard's text fields
   const { subject, email, message } = req.body;
 
@@ -90,6 +90,22 @@ app.post("/api/postcards", upload.single("drawing"), (req, res) => {
   }
 
 
+  // Verify that the PNG image can be decoded
+  try {
+    await sharp(drawing.buffer, {
+      limitInputPixels: 1000000
+    })
+      .png()
+      .toBuffer();
+  } catch (error) {
+    return res.status(400).json({
+      message: "The uploaded drawing contains invalid image data."
+    });
+  }
+
+  
+
+
   // Temporarily log the received data
   console.log("Subject:", subject);
   console.log("Email:", email);
@@ -98,6 +114,28 @@ app.post("/api/postcards", upload.single("drawing"), (req, res) => {
 
   res.status(200).json({
     message: "Postcard received successfully!"
+  });
+});
+
+ // Multer error handler
+app.use((err, req, res, next) => {
+  if (err instanceof multer.MulterError) {
+    if (err.code === "LIMIT_FILE_SIZE") {
+      return res.status(413).json({
+        message: "The drawing must be smaller than 1 MB."
+      });
+    }
+
+    return res.status(400).json({
+      message: "There was a problem uploading the drawing."
+    });
+  }
+
+  // Handle unexpected server errors
+  console.error("Server error:", err);
+
+  return res.status(500).json({
+    message: "An unexpected server error occurred."
   });
 });
 
