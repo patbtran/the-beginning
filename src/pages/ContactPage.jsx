@@ -7,6 +7,9 @@ function ContactPage({ onClose }) {
   // Reference to the drawing canvas component
   const drawingRef = useRef(null);
 
+  // Checks whether the postcard was submitted successfully
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const [formData, setFormData] = useState({
     subject: "",
     email: "",
@@ -27,7 +30,6 @@ const handleSubmit = async (e) => {
   // Retrieve the completed drawing as a PNG
   const drawingBlob = await drawingRef.current.getDrawingBlob();
 
-  
   // Prepare the postcard data for the backend
   const postcardData = new FormData();
 
@@ -51,6 +53,9 @@ const handleSubmit = async (e) => {
     }
 
     console.log("Server response:", result);
+
+    // Update the button after a successful response
+    setIsSubmitted(true);
   } catch (error) {
     console.error("Error submitting postcard:", error);
   }
@@ -124,9 +129,10 @@ const handleSubmit = async (e) => {
         
         <div className="flex justify-center mt-6 mb-8">
         <button type="submit"
+        disabled={isSubmitted}
         className="bg-[#a9cdea] text-[#333] font-bold px-8 py-3 rounded-lg hover:scale-105 transition duration-300 cursor pointer hover:bg-[#8bbbe0] hover:shadow-lg"
         >
-          Submit
+          {isSubmitted ? "Submitted!" : "Submit"}
         </button>
         </div>
       </form>

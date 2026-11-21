@@ -1,6 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const multer = require("multer");
 const sharp = require("sharp");
+const pool = require("./db");
 
 // Create an Express application
 const app = express();
@@ -21,7 +23,6 @@ const upload = multer({
 app.get("/", (req, res) => {
   res.send("Postcard backend is running!");
 });
-
 
  // Endpoint for receiving postcard submissions
 app.post("/api/postcards", upload.single("drawing"), async (req, res) => {
@@ -103,18 +104,28 @@ app.post("/api/postcards", upload.single("drawing"), async (req, res) => {
     });
   }
 
-  
 
+  // Save the validated postcard to PostgreSQL
+  try {
+    const result = await pool.query(
+      `INSERT INTO postcards (subject, email, message, drawing)
+       VALUES ($1, $2, $3, $4)
+       RETURNING id`,
+      [subject, email, message, drawing.buffer]
+    );
 
-  // Temporarily log the received data
-  console.log("Subject:", subject);
-  console.log("Email:", email);
-  console.log("Message:", message);
-  console.log("Drawing:", drawing?.originalname);
+    res.status(201).json({
+      message: "Postcard saved successfully!",
+      id: result.rows[0].id
+    });
+  } catch (error) {
+    console.error("Database save error:", error.message);
 
-  res.status(200).json({
-    message: "Postcard received successfully!"
-  });
+    res.status(500).json({
+      message: "Failed to save postcard."
+    });
+  }
+
 });
 
  // Multer error handler
