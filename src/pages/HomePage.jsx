@@ -104,8 +104,8 @@ function HomePage() {
             </h3>
 
             <p className="text-lg">
-              As of recently, I enjoy learning about modding. The world of PCB's and working on physical hardware have been so entertaining! 
-              I have found that not only is it fun, but it has allowed to me to offer more convenient methods for my friends and family!
+              As of recently, I enjoy learning about modding. You should be able to do whatever you want with the hardware you own. The world of PCB's and working on physical hardware have been so entertaining to follow and learn about. 
+              This year I experienced modding DSi's, arduinos, Kindles, and have given me a meaningful way to connect with family and friends.
               
             </p>
           </div>

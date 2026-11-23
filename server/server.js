@@ -3,10 +3,14 @@ const express = require("express");
 const multer = require("multer");
 const sharp = require("sharp");
 const pool = require("./db");
+const cors = require("cors");
 
 // Create an Express application
 const app = express();
-
+//tells express to allow browser requests from the allowed origin (frontend URL) to access the backend
+app.use(cors({ 
+  origin: process.env.FRONTEND_URL
+}));
 // Define the port the backend will run on
 const PORT = 3001;
 
