@@ -38,12 +38,15 @@ const handleSubmit = async (e) => {
   postcardData.append("message", formData.message);
   postcardData.append("drawing", drawingBlob, "drawing.png");
 
-
   // Send the postcard to Express backend
-  try {
-fetch(`${import.meta.env.VITE_API_URL || ""}/api/postcards`, {      method: "POST",
+try {
+  const response = await fetch(
+    `${import.meta.env.VITE_API_URL || ""}/api/postcards`,
+    {
+      method: "POST",
       body: postcardData
-    });
+    }
+  );
 
     const result = await response.json();
 
