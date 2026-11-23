@@ -41,10 +41,10 @@ function ProjectsPage() {
 
 
 
-<div className="relative max-w-[720px] mx-auto my-12 px-4">
+<div className="relative max-w-[1200px] mx-auto my-12 px-4">
   
 <motion.div 
-  className="grid grid-cols-1 md:grid-cols-2 gap-y-0 md:gap-x-2 items-start"
+  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
@@ -147,7 +147,7 @@ function ProjectsPage() {
     visible: { opacity: 1, y: 0 }
   }}
   transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-  className="relative md:-mt-30"
+  className="relative md:-mt-20"
 >
 
 
@@ -186,7 +186,7 @@ function ProjectsPage() {
     visible: { opacity: 1, y: 0 }
   }}
   transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-  className="relative md:mt-2"
+  className="relative md:-mt-40"
 >
 
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
@@ -229,8 +229,39 @@ function ProjectsPage() {
 
   </div>
 </motion.div>
+{/* Project 5 */}
+<motion.div
+  variants={{
+    hidden: { opacity: 0, x: -180 },
+    visible: { opacity: 1, x: 0 }
+  }}
+  transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+  className="relative md:mt-1"
+>
+  <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+
+    <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
+      <span className="text-gray-300">Project Image</span>
+    </div>
+
+    <h2 className="text-xl font-bold text-white mb-3">
+      Hardware Modding
+    </h2>
+
+    <p className="text-gray-300 text-sm mb-5">
+      Exploring hardware customization through hands-on projects
+      involving Nintendo DSi systems, Kindles, and Arduino devices.
+      Learning about custom firmware, software modifications,
+      and hardware functionality.
+    </p>
+
+  </div>
+  
 </motion.div>
 
+</motion.div>
+
+ 
 </div>
 </div>
   );
