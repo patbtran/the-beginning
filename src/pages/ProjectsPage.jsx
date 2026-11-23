@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "motion/react"; 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import connect4Pi from "../assets/connect4Pi.jpg";
+import DSi from "../assets/DSi.png";
+import cyberOutreach from "../assets/cyberOutreach.jpeg";
+import wellnessApp from "../assets/wellnessApp.jpeg";
+import modding from "../assets/modding.png";
+import stegApplication from "../assets/stegApplication.png";
+
 
 function ProjectsPage() {
   const [formData, setFormData] = useState({
@@ -62,9 +69,13 @@ function ProjectsPage() {
 
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 
-    <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
-      <span className="text-gray-300">Project Image</span>
-    </div>
+    <div className="h-40 rounded-xl mb-5 overflow-hidden">
+  <img
+    src={connect4Pi}
+    alt="Connect Four project"
+    className="w-full h-full object-cover"
+  />
+</div>
 
     <h2 className="text-xl font-bold text-white mb-2">
       Connect Four
@@ -114,9 +125,13 @@ function ProjectsPage() {
 
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 
-    <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
-      <span className="text-gray-300">Project Image</span>
-    </div>
+    <div className="h-40 rounded-xl mb-5 overflow-hidden">
+  <img
+    src={stegApplication}
+    alt="Image Steganography project"
+    className="w-full h-full object-cover"
+  />
+</div>
 
     <h2 className="text-xl font-bold text-white mb-3">
       Image Steganography
@@ -153,9 +168,13 @@ function ProjectsPage() {
 
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 
-    <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
-      <span className="text-gray-300">Project Image</span>
-    </div>
+    <div className="h-40 rounded-xl mb-5 overflow-hidden">
+  <img
+    src={cyberOutreach}
+    alt="Cybersecurity Outreach project"
+    className="w-full h-full object-cover"
+  />
+</div>
 
     <h2 className="text-xl font-bold text-white mb-3">
       Cybersecurity Education Outreach Project
@@ -190,9 +209,13 @@ function ProjectsPage() {
 >
 
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-    <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
-      <span className="text-gray-300">Project Image</span>
-    </div>
+    <div className="h-40 rounded-xl mb-5 overflow-hidden">
+  <img
+    src={wellnessApp}
+    alt="Wellness App project"
+    className="w-full h-full object-cover"
+  />
+</div>
 
     <h2 className="text-xl font-bold text-white mb-3">
       AI Driven Fitness and Wellness Application
@@ -240,9 +263,13 @@ function ProjectsPage() {
 >
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 
-    <div className="h-40 bg-[#484040] rounded-xl mb-5 flex items-center justify-center">
-      <span className="text-gray-300">Project Image</span>
-    </div>
+    <div className="h-40 rounded-xl mb-5 overflow-hidden">
+  <img
+    src={modding}
+    alt="Hardware Modding project"
+    className="w-full h-full object-cover"
+  />
+</div>
 
     <h2 className="text-xl font-bold text-white mb-3">
       Hardware Modding
