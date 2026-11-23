@@ -41,8 +41,7 @@ const handleSubmit = async (e) => {
 
   // Send the postcard to Express backend
   try {
-    const response = await fetch("/api/postcards", {
-      method: "POST",
+fetch(`${import.meta.env.VITE_API_URL || ""}/api/postcards`, {      method: "POST",
       body: postcardData
     });
 
