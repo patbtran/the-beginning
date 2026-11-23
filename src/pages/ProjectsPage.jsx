@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "motion/react"; 
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function ProjectsPage() {
   const [formData, setFormData] = useState({
@@ -34,8 +35,6 @@ function ProjectsPage() {
         />
       </div>
 
-
-      
 <h1 className="text-3xl md:text-6xl font-bold italic text-white text-center mt-40 mb-24">
   my collage of projects
 </h1>
@@ -50,7 +49,6 @@ function ProjectsPage() {
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
 >
-
 
   {/* Project 1 */}
   
@@ -77,24 +75,29 @@ function ProjectsPage() {
       and a Sense HAT LED matrix.
     </p>
 
-    <a
-      href="https://github.com/patbtran/connect4rasp400.git"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[#c4b5f5] hover:underline"
-    >
-      View on GitHub
-    </a>
-    <br>
-    </br>
-    <a
-      href="https://lnkd.in/p/e8CH6EK2"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[#c4b5f5] hover:underline"
-    >
-      View on Linkedin
-    </a>
+    <div className="flex items-center gap-4">
+  <a
+    href="https://github.com/patbtran/connect4rasp400.git"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View Connect Four on GitHub"
+    title="View on GitHub"
+    className="text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
+  >
+    <FaGithub size={24} />
+  </a>
+
+  <a
+    href="https://lnkd.in/p/e8CH6EK2"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View Connect Four on LinkedIn"
+    title="View on LinkedIn"
+    className="text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
+  >
+    <FaLinkedin size={24} />
+  </a>
+</div>
 
   </div>
   </motion.div>
@@ -125,13 +128,15 @@ function ProjectsPage() {
     </p>
 
     <a
-      href="https://www.linkedin.com/in/patriciabtra/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[#c4b5f5] hover:underline"
-    >
-      View on Linkedin
-    </a>
+  href="https://github.com/patbtran/ImageSteganography2026.git"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="View Image Steganography on GitHub"
+  title="View on GitHub"
+  className="inline-block text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
+>
+  <FaGithub size={24} />
+</a>
   </div>
   </motion.div>
 
@@ -162,13 +167,15 @@ function ProjectsPage() {
     </p>
 
     <a
-      href="https://lnkd.in/p/eq8vxUwS"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[#c4b5f5] hover:underline"
-    >
-      View on Linkedin
-    </a>
+  href="https://lnkd.in/p/eq8vxUwS"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="View Cybersecurity Outreach on LinkedIn"
+  title="View on LinkedIn"
+  className="inline-block text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
+>
+  <FaLinkedin size={24} />
+</a>
   </div>
   </motion.div>
 
@@ -196,23 +203,29 @@ function ProjectsPage() {
       with social features designed to promote community engagement and motivation.
     </p>
 
-    <a
-      href="https://github.com/Mksurfing/tardigrades.git"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[#c4b5f5] hover:underline"
-    >
-      View on Github
-    </a>
-    <br></br>
-    <a
-      href="https://lnkd.in/p/e_CMbcFh"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[#c4b5f5] hover:underline"
-    >
-      View on Linkedin
-    </a>
+    <div className="flex items-center gap-4">
+  <a
+    href="https://github.com/Mksurfing/tardigrades.git"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View AI Fitness Application on GitHub"
+    title="View on GitHub"
+    className="text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
+  >
+    <FaGithub size={24} />
+  </a>
+
+  <a
+    href="https://lnkd.in/p/e_CMbcFh"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View AI Fitness Application on LinkedIn"
+    title="View on LinkedIn"
+    className="text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
+  >
+    <FaLinkedin size={24} />
+  </a>
+</div>
 
   </div>
 </motion.div>
