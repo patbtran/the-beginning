@@ -54,7 +54,7 @@ function HomePage() {
 
           <div>
             <h3 className="text-2xl font-bold italic mb-3">
-              Hi, I'm Patricia!
+              Hi, I'm Patricia aka cheesa!
             </h3>
 
             <p className="text-lg">
