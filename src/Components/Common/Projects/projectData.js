@@ -1,7 +1,5 @@
 //stores info for each project. titles, pictures, descriptions, and links
 
-
-
 import connect4Pi from "../../../assets/connect4Pi.jpg";
 import aboutme4 from "../../../assets/aboutme4.jpg";
 

@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import PageTransition from './Components/Common/PageTransition';
 import { useState } from 'react';
+import CursorSparkles from "./Components/Common/CursorSparkles";
 
 function App() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -24,9 +25,10 @@ function App() {
 };
 
   return (
-    <div>
-        <Header setContactOpen={setContactOpen} />
-      <main className="pt-20 bg-[#1a1616] min-h-screen">
+  <div>
+    <CursorSparkles />
+    <Header setContactOpen={setContactOpen} />
+    <main className="pt-20 bg-[#1a1616] min-h-screen">
         <PageTransition>
         <Routes>
           <Route path="/" element={<HomePage />} />

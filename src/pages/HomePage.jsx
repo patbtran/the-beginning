@@ -16,11 +16,11 @@ function HomePage() {
       </h1>
 
       <p className="text-xl text-center mt-2">
-        curious about me? start here
+        
       </p>
 
 
-      {/* Explore Blog Button */}
+      {/* Explore Blog Button 
       <div className="flex justify-center mt-8">
         <Link to="/blog">
           <img
@@ -29,7 +29,7 @@ function HomePage() {
             className="w-[200px] transition duration-300 hover:scale-110 hover:drop-shadow-[0_0_15px_#ae9cde]"
           />
         </Link>
-      </div>
+      </div> */}
 
 
       {/* ============================= */}
