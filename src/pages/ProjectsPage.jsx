@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { motion } from "motion/react"; 
+import { motion, AnimatePresence } from "motion/react"; 
+import ExpandedProject from "../Components/Common/Projects/ExpandedProject";
+import projectData from "../Components/Common/Projects/projectData";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import connect4Pi from "../assets/connect4Pi.jpg";
 import DSi from "../assets/DSi.png";
@@ -15,6 +17,13 @@ function ProjectsPage() {
     email: "",
     message: ""
   });
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [activeImage, setActiveImage] = useState(0);
+
+  const openProject = (project) => {
+  setSelectedProject(project);
+  setActiveImage(0);
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -65,6 +74,7 @@ function ProjectsPage() {
     visible: { opacity: 1, x: 0 }
   }}
   transition={{ duration: 0.8, delay: 0, ease: "easeOut" }}
+  onClick={() => openProject(projectData.connectFour)}
 >
 
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
@@ -93,6 +103,7 @@ function ProjectsPage() {
     rel="noopener noreferrer"
     aria-label="View Connect Four on GitHub"
     title="View on GitHub"
+    onClick={(e) => e.stopPropagation()}
     className="text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
   >
     <FaGithub size={24} />
@@ -104,6 +115,7 @@ function ProjectsPage() {
     rel="noopener noreferrer"
     aria-label="View Connect Four on LinkedIn"
     title="View on LinkedIn"
+    onClick={(e) => e.stopPropagation()}
     className="text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
   >
     <FaLinkedin size={24} />
@@ -120,6 +132,7 @@ function ProjectsPage() {
     visible: { opacity: 1, x: 0 }
   }}
   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+  onClick={() => openProject(projectData.steganography)}
   className="relative md:mt-32"
 >
 
@@ -148,6 +161,7 @@ function ProjectsPage() {
   rel="noopener noreferrer"
   aria-label="View Image Steganography on GitHub"
   title="View on GitHub"
+  onClick={(e) => e.stopPropagation()}
   className="inline-block text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
 >
   <FaGithub size={24} />
@@ -162,6 +176,7 @@ function ProjectsPage() {
     visible: { opacity: 1, y: 0 }
   }}
   transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+  onClick={() => openProject(projectData.cybersecurity)}
   className="relative md:-mt-20"
 >
 
@@ -191,6 +206,7 @@ function ProjectsPage() {
   rel="noopener noreferrer"
   aria-label="View Cybersecurity Outreach on LinkedIn"
   title="View on LinkedIn"
+  onClick={(e) => e.stopPropagation()}
   className="inline-block text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
 >
   <FaLinkedin size={24} />
@@ -205,6 +221,7 @@ function ProjectsPage() {
     visible: { opacity: 1, y: 0 }
   }}
   transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+  onClick={() => openProject(projectData.fitness)}
   className="relative md:-mt-40"
 >
 
@@ -233,6 +250,7 @@ function ProjectsPage() {
     rel="noopener noreferrer"
     aria-label="View AI Fitness Application on GitHub"
     title="View on GitHub"
+    onClick={(e) => e.stopPropagation()}
     className="text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
   >
     <FaGithub size={24} />
@@ -244,6 +262,7 @@ function ProjectsPage() {
     rel="noopener noreferrer"
     aria-label="View AI Fitness Application on LinkedIn"
     title="View on LinkedIn"
+    onClick={(e) => e.stopPropagation()}
     className="text-[#c4b5f5] hover:text-white hover:scale-110 transition-all duration-300"
   >
     <FaLinkedin size={24} />
@@ -260,6 +279,7 @@ function ProjectsPage() {
   }}
   transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
   className="relative md:mt-1"
+  onClick={() => openProject(projectData.modding)}
 >
   <div className="bg-[#302a2a] rounded-2xl p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 
@@ -290,6 +310,16 @@ function ProjectsPage() {
 
  
 </div>
+<AnimatePresence>
+  {selectedProject && (
+    <ExpandedProject
+      project={selectedProject}
+      activeImage={activeImage}
+      setActiveImage={setActiveImage}
+      onClose={() => setSelectedProject(null)}
+    />
+  )}
+</AnimatePresence>
 </div>
   );
 }
