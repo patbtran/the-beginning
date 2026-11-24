@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import BlogPostsPage from './pages/BlogPostsPage';
 import IndividualPostPage from './pages/IndividualPostPage';
 import ContactPage from './pages/ContactPage';
@@ -8,12 +8,23 @@ import Footer from './Components/Common/Footer';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import PageTransition from './Components/Common/PageTransition';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CursorSparkles from "./Components/Common/CursorSparkles";
 
 function App() {
   const [contactOpen, setContactOpen] = useState(false);
   const [contactClosing, setContactClosing] = useState(false);
+
+  //resets the scroll bar when entering a new page
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant"
+    });
+  }, [pathname]);
 
   const closeContact = () => {
   setContactClosing(true);

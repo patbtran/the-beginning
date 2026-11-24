@@ -10,7 +10,7 @@ function HomePage() {
   return (
     <div className="bg-[#1a1616] min-h-screen text-white p-8">
 
-      {/* Name / Title */}
+      {/* Name / Title
       <h1 className="text-5xl font-bold text-center">
         cheesa
       </h1>
@@ -18,6 +18,7 @@ function HomePage() {
       <p className="text-xl text-center mt-2">
         
       </p>
+       */}
 
 
       {/* Explore Blog Button 
